@@ -18,6 +18,7 @@ You can set the Disqus shortname using the plugins configuration in the book.jso
 
 ```
 {
+    plugins: ["disqus"],
     pluginsConfig: {
         "disqus": {
             "shortName": "XXXXXXX"
