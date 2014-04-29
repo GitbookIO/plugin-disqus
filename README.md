@@ -14,13 +14,15 @@ $ gitbook build ./ --plugins=disqus
 ```
 
 
-You can set the Disqus shortname using the plugins configuration (command line option: `--pluginsConfig`) with the following content:
+You can set the Disqus shortname using the plugins configuration in the book.json:
 
 ```
 {
-    "disqus": {
-        "shortName": "XXXXXXX"
-    }
+    pluginsConfig: {
+        "disqus": {
+            "shortName": "XXXXXXX"
+        }
+    }  
 }
 ```
 
