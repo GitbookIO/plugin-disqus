@@ -46,6 +46,9 @@ require([
     gitbook.events.bind("start", function(e, config) {
         config.disqus = config.disqus || {};
         var disqus_shortname = config.disqus.shortName;
+        var disqus_config = function() {
+            this.language = $('html').attr('lang') || "en";
+        };
 
         if (config.disqus.useIdentifier) {
             use_identifier = true;
