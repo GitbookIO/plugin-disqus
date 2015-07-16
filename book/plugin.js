@@ -16,7 +16,7 @@ require([
             DISQUS.reset({
                 reload: true,
                 config: function () {  
-                    this.language = "en";  
+                    this.language = $('html').attr('lang') || "en";
                     this.page.url = window.location.href;
 
                     if (use_identifier) {
