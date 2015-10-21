@@ -14,5 +14,14 @@
     "license": "Apache 2",
     "bugs": {
         "url": "https://github.com/GitbookIO/plugin-disqus/issues"
+    },
+    "gitbook": {
+        "properties": {
+            "shortName": {
+                "type": "string",
+                "title": "Website Shortname",
+                "required": true
+            }
+        }
     }
 }
