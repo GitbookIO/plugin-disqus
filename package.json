@@ -4,7 +4,7 @@
     "main": "index.js",
     "version": "0.0.4",
     "engines": {
-        "gitbook": "*"
+        "gitbook": ">=2.5.0"
     },
     "homepage": "https://github.com/GitbookIO/plugin-disqus",
     "repository": {
@@ -21,6 +21,11 @@
                 "type": "string",
                 "title": "Website Shortname",
                 "required": true
+            },
+            "useIdentifier": {
+                "type": "boolean",
+                "title": "Use page identifier",
+                "default": false
             }
         }
     }
