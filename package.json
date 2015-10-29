@@ -2,7 +2,7 @@
     "name": "gitbook-plugin-disqus",
     "description": "Disqus integration into GitBook",
     "main": "index.js",
-    "version": "0.0.4",
+    "version": "0.1.0",
     "engines": {
         "gitbook": ">=2.5.0"
     },
