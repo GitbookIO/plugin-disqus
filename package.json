@@ -1,10 +1,12 @@
 {
+    "title": "Disqus",
     "name": "gitbook-plugin-disqus",
-    "description": "Disqus integration into GitBook",
+    "description": "Disqus thread in the footer of your GitBook",
+    "icon": "./icon.png",
     "main": "index.js",
     "version": "0.1.0",
     "engines": {
-        "gitbook": ">=2.5.0"
+        "gitbook": ">=4.0.0-alpha"
     },
     "homepage": "https://github.com/GitbookIO/plugin-disqus",
     "repository": {
@@ -15,6 +17,9 @@
     "bugs": {
         "url": "https://github.com/GitbookIO/plugin-disqus/issues"
     },
+    "keywords": [
+        "gitbook:social"
+    ],
     "gitbook": {
         "properties": {
             "shortName": {
