@@ -1,6 +1,6 @@
 const GitBook = require('gitbook-core');
 const DisqusThread = require('react-disqus-thread');
-const { React } = GitBook;
+const { React, Immutable } = GitBook;
 
 const DisqusFooter = React.createClass({
     propTypes: {
@@ -10,8 +10,23 @@ const DisqusFooter = React.createClass({
     },
 
     render() {
-        const { page, shortName } = this.props;
-        const identifier = page.attributes.getIn(['disqus', 'identifier']);
+        const { page, shortName, useIdentifier } = this.props;
+
+        // Default identifier
+        const defaultIdentifier = '';
+
+        // Get disqus config for this page
+        const pageConfig = page.attributes.get(['disqus'], Immutable.Map());
+
+        // Disqus is disabled for this page
+        if (pageConfig === false) {
+            return null;
+        }
+
+        // Page frontmatter can define a custom identifier or use the default one
+        const identifier = useIdentifier ?
+            pageConfig.get('identifier', defaultIdentifier)
+            : null;
 
         return (
             <GitBook.Panel>

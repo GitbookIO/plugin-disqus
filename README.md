@@ -15,6 +15,18 @@ To use the Disqus plugin in your Gitbook project, add the disqus plugin to the `
 }
 ```
 
+### Disable it for a specific page
+
+Using the YAML frontmatter, you can disable the Disqus comments thread for a specific page:
+
+```md
+---
+disqus: false
+---
+
+# My Page without disqus
+```
+
 ### Use custom page identifiers
 
 By default Disqus use the window URL as the main identifier when creating a thread. You can set a custom identifier in the YAML frontmatter of your page:
