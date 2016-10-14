@@ -1,19 +1,18 @@
+const path = require('path');
 const GitBook = require('gitbook-core');
 const DisqusThread = require('react-disqus-thread');
 const { React, Immutable } = GitBook;
 
 const DisqusFooter = React.createClass({
     propTypes: {
-        page:          GitBook.Shapes.Page,
-        shortName:     React.PropTypes.string.isRequired,
-        useIdentifier: React.PropTypes.bool
+        defaultIdentifier: React.PropTypes.string,
+        page:              GitBook.Shapes.Page,
+        shortName:         React.PropTypes.string.isRequired,
+        useIdentifier:     React.PropTypes.bool
     },
 
     render() {
-        const { page, shortName, useIdentifier } = this.props;
-
-        // Default identifier
-        const defaultIdentifier = '';
+        const { defaultIdentifier, page, shortName, useIdentifier } = this.props;
 
         // Get disqus config for this page
         const pageConfig = page.attributes.get(['disqus'], Immutable.Map());
@@ -41,11 +40,15 @@ const DisqusFooter = React.createClass({
     }
 });
 
-function mapStateToProps({ config, page }) {
+function mapStateToProps({ config, file, page, languages }) {
+    const defaultIdentifier = languages.current ?
+        path.join(languages.current, file.url) : file.url;
+
     return {
+        page,
+        defaultIdentifier,
         shortName: config.getIn(['pluginsConfig', 'disqus', 'shortName']),
-        useIdentifier: config.getIn(['pluginsConfig', 'disqus', 'useIdentifier']),
-        page
+        useIdentifier: config.getIn(['pluginsConfig', 'disqus', 'useIdentifier'])
     };
 }
 
