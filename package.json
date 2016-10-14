@@ -1,32 +1,51 @@
 {
-    "name": "gitbook-plugin-disqus",
-    "description": "Disqus integration into GitBook",
-    "main": "index.js",
-    "version": "0.1.0",
-    "engines": {
-        "gitbook": ">=2.5.0"
-    },
-    "homepage": "https://github.com/GitbookIO/plugin-disqus",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/GitbookIO/plugin-disqus.git"
-    },
-    "license": "Apache-2.0",
-    "bugs": {
-        "url": "https://github.com/GitbookIO/plugin-disqus/issues"
-    },
-    "gitbook": {
-        "properties": {
-            "shortName": {
-                "type": "string",
-                "title": "Website Shortname",
-                "required": true
-            },
-            "useIdentifier": {
-                "type": "boolean",
-                "title": "Use page identifier",
-                "default": false
-            }
-        }
+  "title": "Disqus",
+  "name": "gitbook-plugin-disqus",
+  "description": "Disqus comments thread in the footer of your pages",
+  "icon": "./icon.png",
+  "main": "index.js",
+  "browser": "./_assets/plugin.js",
+  "version": "0.1.0",
+  "engines": {
+    "gitbook": ">=4.0.0-alpha"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-disqus-thread": "^0.4.0"
+  },
+  "devDependencies": {
+    "gitbook-plugin": "^4.0.0",
+    "eslint": "3.7.1",
+    "eslint-config-gitbook": "1.4.0"
+  },
+  "homepage": "https://github.com/GitbookIO/plugin-disqus",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GitbookIO/plugin-disqus.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/GitbookIO/plugin-disqus/issues"
+  },
+  "keywords": [
+    "gitbook:social"
+  ],
+  "scripts": {
+    "build-js": "gitbook-plugin build ./src/index.js ./_assets/plugin.js",
+    "prepublish": "npm run build-js"
+  },
+  "gitbook": {
+    "properties": {
+      "shortName": {
+        "type": "string",
+        "title": "Website Shortname",
+        "required": true
+      },
+      "useIdentifier": {
+        "type": "boolean",
+        "title": "Use page identifier",
+        "default": false
+      }
     }
+  }
 }
