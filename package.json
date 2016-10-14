@@ -1,7 +1,7 @@
 {
   "title": "Disqus",
   "name": "gitbook-plugin-disqus",
-  "description": "Disqus thread in the footer of your pages",
+  "description": "Disqus comments thread in the footer of your pages",
   "icon": "./icon.png",
   "main": "index.js",
   "browser": "./_assets/plugin.js",
