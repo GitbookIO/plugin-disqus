@@ -5,7 +5,7 @@
   "icon": "./icon.png",
   "main": "index.js",
   "browser": "./_assets/plugin.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "gitbook": ">=4.0.0-alpha"
   },
