@@ -24,6 +24,8 @@ Using the YAML frontmatter, you can disable the Disqus comments thread for a spe
 disqus: false
 ---
 
+**Important**: this setting works only with plugin release >= 1.0.0 and gitBook >= 4, than it does not work with the default setting of gitbook hosted version.
+
 # My Page without disqus
 ```
 
